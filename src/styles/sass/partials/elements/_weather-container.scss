@@ -1,0 +1,56 @@
+#weather-container {
+  width: 600px;
+  max-width: 95%;
+  margin: 0 auto;
+  @include vertical-align;
+  @extend %clearfix;
+
+  @media screen and (max-width: $a-vp) {
+    width: 85%;
+  }
+
+  #location-infomation {
+    h3 {
+      float: left;
+      margin-right: 10px;
+      line-height: 2rem;
+    }
+
+    p {
+      float: left;
+      font-size: 0.825 * $base-font-size;
+      line-height: 2rem;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    i {
+      font-size: 80%;
+    }
+  }
+
+  #forecast-data {
+    @extend %clearfix;
+  }
+
+  #controls {
+    input[type='text'] {
+      display: block;
+      position: relative;
+      margin: 0 auto 2rem;
+      width: 90%;
+      padding: 0 10px 0.25rem 10px;
+
+      color: $text-input;
+      font-family: $serif;
+      font-size: $base-font-size * 1.75;
+      line-height: 1.5;
+
+      @media screen and (max-width: $a-vp) {
+        font-size: $mobile-base-size * 1.75;
+      }
+    }
+  }
+}

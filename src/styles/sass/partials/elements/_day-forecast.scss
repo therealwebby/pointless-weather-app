@@ -1,0 +1,101 @@
+.day-forecast {
+
+  @extend  %clearfix;
+  float: left;
+  position: relative;
+  margin-bottom: 1rem;
+
+  .date-container,
+  .weather-container,
+  .temprature-container {
+    position: relative;
+    float: left;
+  }
+
+  .weather-container {
+    width: 100%;
+    padding: $base-font-size 0;
+    text-transform: capitalize;
+    letter-spacing: -0.4px;
+  }
+
+  .temprature-container {
+    width: 100%;
+
+    .max,
+    .min {
+      float: left;
+    }
+  }
+
+  h4,
+  .date {
+    float: left;
+    line-height: 2 * $base-font-size;
+  }
+
+  h4 {
+    font-family: $sans-serif;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .date {
+    margin: 0;
+    margin-left: 10px;
+  }
+
+  &.future-days {
+    @extend  %clearfix;
+    width: 49%;
+    padding: (2 * $base-font-size) 4% 2% 4%;
+    background-color: $light-transparency;
+
+    @media screen and (max-width: $a-vp) {
+      width: 100%;
+    }
+
+    &:nth-child(2) {
+      border-right: 1px solid $light-transparency;
+
+      @media screen and (max-width: $a-vp) {
+        border: 0;
+        margin: 0;
+      }
+    }
+
+    h2 {
+      line-height: 1.5;
+      font-size: $base-font-size * 1.125;
+    }
+
+    .date-container {
+      position: absolute;
+      top: 0;
+      padding: 0 2%;
+      height: $base-font-size * 1.75;
+
+      background-color: $label-color;
+
+      h4 {
+        @extend h5;
+        line-height: $base-font-size * 1.75;
+        font-family: $sans-serif;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &.today {
+
+    .weather-container {
+      width: 100%;
+      text-align: center;
+    }
+
+    .date-container {
+      @extend  %clearfix;
+      width: 100%;
+    }
+  }
+}

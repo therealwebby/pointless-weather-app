@@ -1,0 +1,46 @@
+// ------------------------------------------------------------
+// Breakpoints
+// ------------------------------------------------------------
+
+$a-vp								: 500px;	// larger mobile
+$b-vp								: 600px;	// portait ipad
+
+// ------------------------------------------------------------
+// Colour Palette
+// -----------------------------------------------------------
+
+$darkest-blue: #111821;
+$dark-grey: #333;
+$light-grey: #f0f0f0;
+
+$light-transparency: rgba(255,255,255,0.05);
+$lighter-transparency: rgba(255,255,255,0.1);
+$lightest-transparency: rgba(255,255,255,0.2);
+
+
+//Stucture
+$background-color: $darkest-blue;
+$label-color: $lighter-transparency;
+
+//Brand colours
+$main-color: $lightest-transparency;
+
+//Text
+$text-colour-dark: $dark-grey;
+$text-colour-light: $light-grey;
+
+//Inputs
+$text-input: $text-colour-light;
+
+// ------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------
+
+$base-font-size : 1rem;
+$mobile-base-size : $base-font-size * 0.75;
+
+$serif : 'Bitter', serif;
+$sans-serif : 'Open Sans', sans-serif;
+
+$heading-font : $serif;
+$body-font : $sans-serif;

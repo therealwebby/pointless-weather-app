@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="weatherApp">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!--Disable IE Compatibility Mode-->
+	<meta charset="UTF-8">
+
+	<meta name="robots" content="index, follow"> <!-- Crawlers -->
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1"><!-- Responsive no scaleing -->
+
+	<meta name="description" content=""><!-- Basic SEO -->
+	<title>All the weather, all the time</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+</head>
+
+<body>
+	<div id="weather-container" ng-controller="weatherControl" resize>
+		<section id="location-infomation" ng-show="locationInfo">
+				<div class="city">
+					<h3><i class="icon-map"></i> {{forecast.location.city}}</h3>
+					<p><a href="#" ng-click="revealControls()">Try another location</a></p>
+				</div>
+		</section>
+		<section id="forecast-data" ng-show="forecastData">
+			<div ng-repeat="day in forecast.item.forecast" class="day-forecast" ng-class="$first ? 'today' : 'future-days'">
+				<div class="weather-container">
+					<h2>{{day.weatherType}}</h2>
+				</div>
+				<div class="date-container">
+					<h4 ng-bind="$first ? 'Today - ' + day.date : day.date"></h4>
+				</div>
+				<div class="temprature-container">
+					<p class="max">High <i class="icon-thermometer"></i> {{day.high}}&deg;{{forecast.units.temperature}} &nbsp;</p>
+					<p class="min">Low <i class="icon-thermometer"></i> {{day.low}}&deg;{{forecast.units.temperature}}</p>
+				</div>
+			</div>
+		</section>
+		<section id="controls" ng-show="controls">
+			<form ng-submit="findForcast(searchText)" name="forecastForm">
+				<input type="text" name="location" ng-model="searchText" placeholder="Enter a location (e.g. London, UK)" required googleplace />
+				<button type="submit">Check Weather</button>
+			</form>
+		</section>
+	</div>
+	<footer>
+		Weather data provided by <a href="https://uk.weather.yahoo.com/">Yahoo</a>
+	</footer>
+	<!-- Scripts -->
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
